@@ -1,33 +1,31 @@
-cat > netlify.toml << 'EOF'
 [build]
-publish = "build/web"
-command = "flutter build web --release"
+  publish = "build/web"
+  command = "flutter build web --release"
 
 [build.environment]
-FLUTTER_VERSION = "3.47.2"
+  FLUTTER_VERSION = "3.47.2"
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[headers]]
-for = "/assets/*"
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/main.dart.js"
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
+  for = "/main.dart.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/flutter.js"
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
+  for = "/flutter.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-for = "/flutter_bootstrap.js"
-[headers.values]
-Cache-Control = "public, max-age=31536000, immutable"
-EOF
+  for = "/flutter_bootstrap.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
