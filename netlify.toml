@@ -2,8 +2,8 @@
   publish = "build/web"
   command = "flutter build web --release"
 
-[build.environment]
-  FLUTTER_VERSION = "3.47.2"
+[[plugins]]
+  package = "@netlify/plugin-flutter"
 
 [[redirects]]
   from = "/*"
